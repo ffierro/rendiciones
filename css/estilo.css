@@ -1,0 +1,92 @@
+.ficha {
+	margin-bottom: 15px;
+}
+
+.formato_img {
+	width: 100%;
+	height: 100%;
+}
+
+.product-img {
+	text-align: center;
+}
+
+a.product-review{
+	text-decoration: none;
+	display: inline-block;
+}
+
+.product-review {
+	color: #fff;
+	width: 100%;
+	background: #F04D0F;
+	display: inline-block;
+	padding: 5px;
+}
+
+.precio {
+	color: red;
+	font-size: 18px;
+}
+
+.img_ficha {
+	border: 5px solid red;
+}
+
+.dropdown-menu {
+	background: #F0F0F0;
+}
+
+.text-box {
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+.image-coportate {
+	margin: auto;
+	text-align: center;
+}
+
+.contenedor img {
+	width: 60%;
+}
+
+.holding {
+	display: inline-block;
+	box-shadow: 0px 0px 50px #000;
+	width: 100%;
+}
+
+.botones {
+	padding: 3px;
+	border: 1px solid #fff;
+	display: inline-block;
+	border-radius: 15px;
+}
+
+.botones:hover{
+	background: #f60;
+	text-decoration: none;
+}
+
+.dropdown:hover {
+	background: rgba(24, 186, 155, .5);
+	color: #FFFFFF;
+}
+
+
+.login-header {
+	background: rgba(24, 186, 155, .5);
+	color: #fff;
+}
+
+.login-header h4{
+	color: #fff;
+}
+
+@media (max-width: 768px) {
+	.contenedor img {
+		width: 100%;
+	}
+}
+
