@@ -79,12 +79,11 @@
 
 		                    <thead style="text-align: center; background: #eaeaea;">
 		                        <tr>
-		                            <th style="text-align: center;"> Nombre Usuario</th>
-		                            <th style="text-align: center;"> RUT</th>
-		                            <th style="text-align: center;"> Direccion</th>
-		                            <th style="text-align: center;"> Pais</th>
-		                            <th style="text-align: center;"> Ciudad</th>
-		                            <th style="text-align: center;"> Accion </th>
+		                            <th style="text-align: center;"> Nombre de Usuario</th>
+		                            <th style="text-align: center;"> Password</th>
+		                            <th style="text-align: center;"> Nombre</th>
+		                            <th style="text-align: center;"> Apellido</th>
+		                            <th style="text-align: center;"> Privilegio</th>
 		                        </tr>
 		                    </thead>
 		                    <tbody>
