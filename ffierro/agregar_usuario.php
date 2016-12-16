@@ -48,7 +48,7 @@ include('../php/conexion.php');
 	</header>
 	<div class="container">
 		<div class="row">					
-			<a class="btn btn-success" data-toggle="modal" data-target="#nuevoUsu">Nuevo Ingeniero</a><br><br>
+			<a class="btn btn-success" data-toggle="modal" data-target="#nuevoUsu">Nuevo Usuario</a><br><br>
 			<table class='table'>
 				<tr>
 					<th>Id</th><th>Rut</th><th>Nombre</th><th>Apellido</th><th><span class="glyphicon glyphicon-wrench"></span></th>
