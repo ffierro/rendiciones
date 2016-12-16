@@ -47,7 +47,7 @@ function menuAdm($level, $usr) {
 	        $menu .= "<li class='dropdown'>";
 	          $menu .= "<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Usuarios <span class='caret'></span></a>";
 	          $menu .= "<ul class='dropdown-menu'>";
-	            $menu .= "<li><a href='ffierro/usuarios.php' data-toggle='modal' data-target='#userModal'>Nuevo Usuario</a></li>";
+	            $menu .= "<li><a href='../ffierro/usuarios.php' data-toggle='modal' data-target='#userModal'>Nuevo Usuario</a></li>";
 	            $menu .= "<li><a href='todos_usuarios.php'>Editar Usuario </a></li>";                              
 	          $menu .= "</ul>";
 	        $menu .= "</li>";

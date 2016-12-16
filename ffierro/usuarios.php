@@ -68,22 +68,40 @@
 
 	<?php crearMenu(); ?>
 	<div class="dashboard">
-		<table>
-		<thead>
-			<th> ID </th>
-			<th> Nombre </th>
-		</thead>
-		<tbody>
-			<?php
-				while ($row=mysqli_fetch_array(resultado)){
-				echo "<tr>";
-				echo "<td> $row[0] </td>";
-				echo "<td> $row[1] </td>";
-				echo "<td> <a class = 'btn btn-primary'> Editar </a> </td>";
 
-			}	?>
-		</tbody>	
+	<div id="page-wrapper">
+	    <div class="container-fluid">
+	        <div class="row">
+	            <div class="col-lg-8">
+	                <h3 class="page-header">Listado de Empresas</h3>
+	                <div class="table-responsive">
+	                    <table class="table table-striped table-bordered table-hover tabla-usuarios" id="dataTables-example">
 
+		                    <thead style="text-align: center; background: #eaeaea;">
+		                        <tr>
+		                            <th style="text-align: center;"> Nombre Usuario</th>
+		                            <th style="text-align: center;"> RUT</th>
+		                            <th style="text-align: center;"> Direccion</th>
+		                            <th style="text-align: center;"> Pais</th>
+		                            <th style="text-align: center;"> Ciudad</th>
+		                            <th style="text-align: center;"> Accion </th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                    <?php
+								while ($row=mysqli_fetch_array($resultado)){
+								echo "<tr>";
+								echo "<td> $row[0] </td>";
+								echo "<td> $row[1] </td>";
+								echo "<td> <a class = 'btn btn-primary'> Editar </a> </td>";
+
+							}	?> 
+		                    </tbody>
+	            		</table>
+	        		</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
