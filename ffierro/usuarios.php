@@ -79,11 +79,12 @@
 
 		                    <thead style="text-align: center; background: #eaeaea;">
 		                        <tr>
-		                            <th style="text-align: center;"> Nombre de Usuario</th>
-		                            <th style="text-align: center;"> Password</th>
-		                            <th style="text-align: center;"> Nombre</th>
+		                            <th style="text-align: center;"> N°</th>
+		                            <th style="text-align: center;"> Nombre Usuario</th>
+		                            <th style="text-align: center;"> Nombre</th> -->
 		                            <th style="text-align: center;"> Apellido</th>
 		                            <th style="text-align: center;"> Privilegio</th>
+		                            <th style="text-align: center;"> Accion</th>
 		                        </tr>
 		                    </thead>
 		                    <tbody>
@@ -92,7 +93,13 @@
 								echo "<tr>";
 								echo "<td> $row[0] </td>";
 								echo "<td> $row[1] </td>";
-								echo "<td> <a class = 'btn btn-primary'> Editar </a> </td>";
+								echo "<td> $row[3] </td>";
+								echo "<td> $row[4] </td>";
+								
+								echo "<td> $row[4] </td>";
+								
+								echo "<td> <a href='#'><i class='fa fa-edit fa-2x'></i></a>";
+								echo "<a href='#'><i class='fa fa-trash fa-2x' style='color: red;'></i></a> </td>";
 
 							}	?> 
 		                    </tbody>
