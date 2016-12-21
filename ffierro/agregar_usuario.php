@@ -33,11 +33,11 @@ include('../php/conexion.php');
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="#" class="navbar-brand">Contactos</a>
+					<a href="#" class="navbar-brand">Administración de Usuarios</a>
 				</div>
 				<div class="collapse navbar-collapse" id="navegacion-fm">
 					<ul class="nav navbar-nav">
-						<li><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>							
+						<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>							
 						<li><a href="cerrars.php"><span class="glyphicon glyphicon-remove"></span>Salir</a></li>						
 					</ul>
 					<ul class="nav navbar-nav navbar-right">				      
@@ -51,7 +51,7 @@ include('../php/conexion.php');
 			<a class="btn btn-success" data-toggle="modal" data-target="#nuevoUsu">Nuevo Usuario</a><br><br>
 			<table class='table'>
 				<tr>
-					<th>Id</th><th>Rut</th><th>Nombre</th><th>Apellido</th><th><span class="glyphicon glyphicon-wrench"></span></th>
+					<th>Id</th><th>Nombre Usuario</th><th>Clave Usuario</th><th>Nombre</th><th>Apellido</th><th>Privilegio</th><th><span class="glyphicon glyphicon-wrench"></span></th>
 				</tr>			
 <?php
 
@@ -75,21 +75,31 @@ include('../php/conexion.php');
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4>Nuevo Contacto</h4>                       
+                        <h4>Agregar Usuario</h4>                       
                     </div>
                     <div class="modal-body">
                        <form action="insertar.php" method="GET">              		
+                       		
                        		<div class="form-group">
-                       			<label for="rut">Rut:</label>
-                       			<input class="form-control" id="validar_rut" name="rut" type="text" placeholder="Rut"></input>
+                       			<label for="nombre">Nombre Usuario:</label>
+                       			<input class="form-control" id="nombre_usuario" name="nombre" type="text" placeholder="Nombre de Usuario"></input>
                        		</div>
                        		<div class="form-group">
-                       			<label for="nombre">Nombre:</label>
+                       			<label for="nombre">Password Usuario:</label>
+                       			<input class="form-control" id="nombre_usuario" name="nombre" type="text" placeholder="Pasword Usuario"></input>
+                       		</div>
+                       		<div class="form-group">
+                       			<label for="rut">Nombre:</label>
                        			<input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre"></input>
+                       			<!-- <input class="form-control" id="validar_rut" name="rut" type="text" placeholder="Rut"></input> -->
                        		</div>
                        		<div class="form-group">
                        			<label for="apellido">Apellido:</label>
                        			<input class="form-control" id="apellido" name="apellido" type="text" placeholder="Apellido"></input>
+                       		</div>
+                       		<div class="form-group">
+                       			<label for="apellido">Privilegio:</label>
+                       			<input class="form-control" id="privilegio" name="privilegio" type="text" placeholder="Privilegio"></input>
                        		</div>
 
 							<input type="submit" class="btn btn-success" value="Salvar">
