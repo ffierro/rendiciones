@@ -73,7 +73,7 @@
 	    <div class="container-fluid">
 	        <div class="row">
 	            <div class="col-lg-8">
-	                <h3 class="page-header">Listado de Empresas</h3>
+	                <h3 class="page-header">Listado de Usuarios</h3>
 	                <div class="table-responsive">
 	                    <table class="table table-striped table-bordered table-hover tabla-usuarios" id="dataTables-example">
 
@@ -81,7 +81,7 @@
 		                        <tr>
 		                            <th style="text-align: center;"> N°</th>
 		                            <th style="text-align: center;"> Nombre Usuario</th>
-		                            <th style="text-align: center;"> Nombre</th> -->
+		                            <th style="text-align: center;"> Nombre</th>
 		                            <th style="text-align: center;"> Apellido</th>
 		                            <th style="text-align: center;"> Privilegio</th>
 		                            <th style="text-align: center;"> Accion</th>
