@@ -7,46 +7,67 @@ include('../php/conexion.php');
 
 	// $fila = mysqli_fetch_array($resultado);
 
+	include ('../php/seguridad.php');
+	include ('../php/vistas.php');
+	
+
+	function crearMenu(){
+		global $privilegio, $nombre;
+		switch ($privilegio){
+			case '0': 
+				menuAdm($privilegio, $nombre);
+				break;
+
+			case '1': 
+				menuStd($privilegio, $nombre);
+				break;
+
+			case '2': 
+				menuMan($privilegio, $nombre);
+				break;
+		}
+	}
  ?>
-
-
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>CRUD php Mysql + bootstrap</title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/estiloshs.css">	
-	<script src="../js/metodos.js"></script>
+	<link rel="stylesheet" href="../css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link rel="stylesheet" href="../css/estilos.css">
+
+
+<!-- CCS para taba dinamica avanzada -->
+    <link href="../css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../css/dataTables.responsive.css" rel="stylesheet">
+
+	<title>Administracion Rendiciones</title>
 </head>
 <body>
-	<header>
-		<nav class="navbar navbar-default navbar-static-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-fm">
-						<span class="sr-only">Desplegar / Ocultar Menu</span>	
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="#" class="navbar-brand">Administración de Usuarios</a>
-				</div>
-				<div class="collapse navbar-collapse" id="navegacion-fm">
-					<ul class="nav navbar-nav">
-						<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>							
-						<li><a href="cerrars.php"><span class="glyphicon glyphicon-remove"></span>Salir</a></li>						
-					</ul>
-					<ul class="nav navbar-nav navbar-right">				      
-				    </ul>			
-				</div>
-			</div>
-		</nav>
+	<header class="superior">
+		<ul class="nav navbar-top-links navbar-right">
+	   		<li class="dropdown">
+	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	            <i class="fa fa-user fa-fw"></i> <?php echo $nombre; ?> <i class="fa fa-caret-down"></i>
+	        </a>
+		        <ul class="dropdown-menu dropdown-user">
+		            <li><a href="<?php echo 'edit_perfil.php?id='.$id_user; ?>">
+		            <i class="fa fa-user fa-fw"></i> Editar Perfil</a>
+		            </li>
+		            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuraciones</a>
+		            </li>
+		            <li class="divider"></li>
+		            <li><a href="../php/cerrar.php"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+		            </li>
+		        </ul>
+	    	</li>
+		</ul>
 	</header>
 	<div class="container">
+		<?php crearMenu(); ?>
 		<div class="row">					
 			<a class="btn btn-success" data-toggle="modal" data-target="#nuevoUsu">Nuevo Usuario</a><br><br>
 			<table class='table'>
@@ -78,28 +99,31 @@ include('../php/conexion.php');
                         <h4>Agregar Usuario</h4>                       
                     </div>
                     <div class="modal-body">
-                       <form action="insertar.php" method="GET">              		
+                       <form action="insertar.php" method="POST">              		
                        		
                        		<div class="form-group">
                        			<label for="nombre">Nombre Usuario:</label>
-                       			<input class="form-control" id="nombre_usuario" name="nombre" type="text" placeholder="Nombre de Usuario"></input>
+                       			<input class="form-control" id="nombre_usuario" name="nom_usr" type="email" placeholder="Nombre de Usuario" required></input>
                        		</div>
                        		<div class="form-group">
                        			<label for="nombre">Password Usuario:</label>
-                       			<input class="form-control" id="nombre_usuario" name="nombre" type="text" placeholder="Pasword Usuario"></input>
+                       			<input class="form-control" id="nombre_usuario" name="pas_usr" type="password" placeholder="Pasword Usuario"></input>
                        		</div>
                        		<div class="form-group">
                        			<label for="rut">Nombre:</label>
-                       			<input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre"></input>
+                       			<input class="form-control" id="nombre" name="nombre_usr" type="text" placeholder="Nombre" required></input>
                        			<!-- <input class="form-control" id="validar_rut" name="rut" type="text" placeholder="Rut"></input> -->
                        		</div>
                        		<div class="form-group">
                        			<label for="apellido">Apellido:</label>
-                       			<input class="form-control" id="apellido" name="apellido" type="text" placeholder="Apellido"></input>
+                       			<input class="form-control" id="apellido" name="apellido_usr" type="text" placeholder="Apellido" required></input>
                        		</div>
                        		<div class="form-group">
-                       			<label for="apellido">Privilegio:</label>
-                       			<input class="form-control" id="privilegio" name="privilegio" type="text" placeholder="Privilegio"></input>
+                       			<select name="priv_usr" class="form-control" required>
+                       				<option value="" selected disabled>Elija el Rol del usuario</option>
+  									<option value="0">Administrador</option>
+									<option value="1">Usuario</option>
+								</select>
                        		</div>
 
 							<input type="submit" class="btn btn-success" value="Salvar">
@@ -170,10 +194,13 @@ include('../php/conexion.php');
 
 
 	</div>
-	<script src="../js/jquery-1.12.3.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>	
-	<script src="../js/jquery.Rut.min.js"></script>	
-	<script src="../js/jquery.Rut.js"></script>	
+
+<script src="../js/jquery-3.1.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<script src="../js/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables.bootstrap.min.js"></script>
+<script src="../js/js_custom.js"></script>
 
 
 	<script>			 
